@@ -27,6 +27,16 @@ class RabbitmqConsumerApplicationTests
         r1.setTaskCode("T001");
 
         rabbitTemplate.convertAndSend("test_queue", r1);
+        rabbitTemplate.convertAndSend("test_queue", r1);
+
+        RequestVO r2 = new RequestVO();
+        r2.setAge(30);
+        r2.setId(123456l);
+        r2.setName("wang");
+        r2.setTaskId("123");
+        r2.setTaskCode("T0021");
+
+        rabbitTemplate.convertAndSend("test_queue", r2);
     }
 
     @Test
